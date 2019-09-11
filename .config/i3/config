@@ -149,6 +149,10 @@ bindsym $mod+BackSpace exec dmenu-system
 bindsym --release Print exec maim -u -s ~/$(date +%F-%s).png
 bindsym $mod+Print exec maim -u ~/$(date +%F-%s).png
 
+# screencasts
+bindsym $mod+backslash exec screencast
+bindsym $mod+Shift+backslash exec killall -INT ffmpeg
+
 # mounting
 bindsym $mod+m exec --no-startup-id dmenu-mount
 bindsym $mod+Shift+m exec --no-startup-id dmenu-umount
