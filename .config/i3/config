@@ -174,7 +174,7 @@ bar {
 		urgent_workspace #101010cc #101010cc #a9a9a9
 	}
 	tray_output none
-        font pango:RobotoMono 12
+        font pango:RobotoMono 10 # 10d / 12l
 	bindsym button1 nop
 	bindsym button4 nop
 	bindsym button5 nop

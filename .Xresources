@@ -1,4 +1,5 @@
-rofi.font: RobotoMono 16
+rofi.font: RobotoMono 14
+! 14d / 16l
 rofi.bw: 1
 rofi.padding: 10
 rofi.width: 600
@@ -23,7 +24,8 @@ URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/firefox
 URxvt.url-select.underline: true
 
-URxvt.font: xft:RobotoMono-Regular:size=14
+URxvt.font: xft:RobotoMono-Regular:size=11
+! 11d / 14l
 URxvt.scrollBar: false
 URxvt.letterSpace: 0
 URxvt.iso14755: false
