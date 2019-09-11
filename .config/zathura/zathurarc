@@ -1,0 +1,9 @@
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set page-padding 1
+set default-bg "#101010"
+set guioptions ''
+
+set recolor
+set recolor-darkcolor "#f8f8f2"
+set recolor-lightcolor "#101010"

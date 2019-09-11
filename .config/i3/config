@@ -1,0 +1,209 @@
+set $mod Mod4
+# --WINDOW SETTINGS--
+
+# font for window titles
+font pango:RobotoMono 0
+
+# gap settings
+gaps inner 10 
+gaps outer 0
+
+# borders
+default_border pixel 1
+
+client.focused #f8f8f2 #f8f8f2 #f8f8f2 #f8f8f2
+client.unfocused #a9a9a9 #a9a9a9 #a9a9a9 #a9a9a9
+client.focused_inactive #f8f8f2 #f8f8f2 #f8f8f2 #f8f8f2
+client.urgent #a9a9a9 #a9a9a9 #a9a9a9 #a9a9a9
+client.placeholder #f8f8f2 #f8f8f2 #f8f8f2 #f8f8f2
+client.background #f8f8f2 #f8f8f2 #f8f8f2 #f8f8f2
+
+for_window [window_role="(?i)GtkFileChooserDialog"] border pixel 0, resize set 1200 700, move position center
+
+for_window [class=comp1110.ass2.gui.Viewer] floating enable, resize set 720 480, move position center
+
+# change window focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move current window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# toggle split direction
+bindsym $mod+t split toggle
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space floating toggle
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# mode switching
+bindsym $mod+s layout stacking
+bindsym $mod+e layout default
+bindsym $mod+g layout tabbed
+bindsym $mod+a focus parent
+
+# --WORKSPACE SETTINGS--
+
+# workspace variables
+set $workspace1 "1. "
+set $workspace2 "2. "
+set $workspace3 "3. "
+set $workspace4 "4. "
+set $workspace5 "5. "
+set $workspace6 "6. "
+set $workspace7 "7. "
+set $workspace8 "8. "
+set $workspace9 "9. "
+set $workspace10 "10. "
+
+# switch workspaces
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+# workspace assigning
+assign [class="(?i)firefox"] $workspace1
+assign [class="discord"] $workspace2
+assign [class="(?i)steam"] $workspace4
+assign [class="steam.exe"] $workspace4
+assign [class="(?i)zathura"] $workspace3
+assign [class="(?i)mathematica"] $workspace3
+for_window [class="Spotify"] move to workspace $workspace10
+
+# --KEYBINDINGS--
+
+# media controls 
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && pkill -RTMIN+10 i3blocks #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && pkill -RTMIN+10 i3blocks #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioNext exec playerctl next 
+bindsym XF86AudioPrev exec playerctl previous 
+
+# backlight controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+
+# open terminal
+bindsym $mod+Return exec i3-sensible-terminal
+# dropdown terminal
+set $term --no-startup-id urxvt
+bindsym $mod+Delete		[instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] move scratchpad
+for_window [instance="dropdown"] resize set 1200 700
+exec --no-startup-id $term -name dropdown
+bindsym $mod+Shift+Delete exec --no-startup-id $term -name dropdown
+
+# applications 
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+w exec urxvt -e ranger
+
+# lock screen / shutdown / reboot
+bindsym $mod+BackSpace exec dmenu-system
+
+# screenshots
+bindsym --release Print exec maim -u -s ~/$(date +%F-%s).png
+bindsym $mod+Print exec maim -u ~/$(date +%F-%s).png
+
+# mounting
+bindsym $mod+m exec --no-startup-id dmenu-mount
+bindsym $mod+Shift+m exec --no-startup-id dmenu-umount
+
+# --AUTOSTART PROGRAMS--
+
+# wallpaper
+exec_always --no-startup-id ~/.fehbg
+# compositor
+exec compton -b
+# mouse hider
+exec --no-startup-id unclutter --timeout 3 -jitter 5 --ignore-scrolling
+exec spotify
+exec discord
+
+# --STATUS BAR--
+bar {
+      status_command i3blocks
+	colors {
+		background #101010cc
+		separator #101010cc
+		focused_workspace #101010cc #101010cc #f8f8f2
+		inactive_workspace #101010cc #101010cc #a9a9a9
+		urgent_workspace #101010cc #101010cc #a9a9a9
+	}
+	tray_output none
+        font pango:RobotoMono 12
+	bindsym button1 nop
+	bindsym button4 nop
+	bindsym button5 nop
+	i3bar_command i3bar -t
+}
+# --RESIZE--
+
+bindsym $mod+r mode "resize"
+# resize windows
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        # for arrow keys
+        bindsym Left resize shrink width 1 px or 1 ppt
+        bindsym Down resize grow height 1 px or 1 ppt
+        bindsym Up resize shrink height 1 px or 1 ppt
+        bindsym Right resize grow width 1 px or 1 ppt
+	# exit resize mode
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# --CONFIG RELOAD/EXIT--
+
+# reload the config file
+bindsym $mod+Shift+c reload
+# restart i3 inplace 
+bindsym $mod+Shift+r restart
+# exit i3
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"

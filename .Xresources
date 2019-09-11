@@ -1,0 +1,70 @@
+rofi.font: RobotoMono 16
+rofi.bw: 1
+rofi.padding: 10
+rofi.width: 600
+rofi.lines: 10
+rofi.drun-match-fields: name
+rofi.drun-display-format: {name}
+rofi.disable-history: true
+rofi.eh: 1
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
+rofi.scroll-method: 1
+rofi.display-drun: run
+
+rofi.color-normal: #00000000, #a9a9a9, #00000000, #00000000, #f8f8f2
+rofi.color-urgent: #00000000, #a9a9a9, #00000000, #00000000, #f8f8f2
+rofi.color-active: #00000000, #a9a9a9, #00000000, #00000000, #f8f8f2
+rofi.color-window: #cc101010
+
+
+URxvt.perl-ext: default,url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/firefox
+URxvt.url-select.underline: true
+
+URxvt.font: xft:RobotoMono-Regular:size=14
+URxvt.scrollBar: false
+URxvt.letterSpace: 0
+URxvt.iso14755: false
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.depth: 32
+
+! Background colour
+URxvt*background: [80]#101010
+! Font colour
+*.foreground:   #f8f8f2
+*.cursorColor:  #f8f8f2
+
+! black
+*.color0:       #101010
+*.color8:       #525252
+
+! red
+*.color1:       #ac4142
+*.color9:       #ac4142
+
+! green
+*.color2:       #90a959
+*.color10:      #90a959
+
+! yellow
+*.color3:       #f4bf75
+*.color11:      #f4bf75
+
+! blue
+*.color4:       #6a9fb5
+*.color12:      #6a9fb5
+
+! magenta
+*.color5:       #aa759f
+*.color13:      #aa759f
+
+! cyan
+*.color6:       #75b5aa
+*.color14:      #75b5aa
+
+! white
+*.color7:       #b9b9b9
+*.color15:      #f7f7f7
