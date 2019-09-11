@@ -1,8 +1,9 @@
-TMPBG1=/tmp/corrupted.png
+TMPBG1=/tmp/original.png
 TMPBG2=/tmp/locked.png
 LOCK=/home/jack/.config/i3/lock.png
-RES=1920x1080
+RES=1600x900
 
+sleep 0.1
 ffmpeg -f x11grab -video_size $RES -y -i $DISPLAY -vframes 1 $TMPBG1
 corrupter $TMPBG1 $TMPBG1
 ffmpeg -y -i $TMPBG1 -i $LOCK -filter_complex "boxblur=5:1,overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2" -vframes 1 $TMPBG2
