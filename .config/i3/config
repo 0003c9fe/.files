@@ -2,7 +2,8 @@ set $mod Mod4
 # --WINDOW SETTINGS--
 
 # font for window titles
-font pango:RobotoMono 0
+font pango:RobotoMono 10
+# 10d / 12l
 
 # gap settings
 gaps inner 10 
@@ -18,7 +19,7 @@ client.urgent #a9a9a9 #a9a9a9 #a9a9a9 #a9a9a9
 client.placeholder #f8f8f2 #f8f8f2 #f8f8f2 #f8f8f2
 client.background #f8f8f2 #f8f8f2 #f8f8f2 #f8f8f2
 
-for_window [window_role="(?i)GtkFileChooserDialog"] border pixel 0, resize set 1200 700, move position center
+for_window [window_role="(?i)GtkFileChooserDialog"] border pixel 1, resize set 1200 700, move position center
 
 for_window [class=comp1110.ass2.gui.Viewer] floating enable, resize set 720 480, move position center
 
@@ -174,7 +175,6 @@ bar {
 		urgent_workspace #101010cc #101010cc #a9a9a9
 	}
 	tray_output none
-        font pango:RobotoMono 10 # 10d / 12l
 	bindsym button1 nop
 	bindsym button4 nop
 	bindsym button5 nop
