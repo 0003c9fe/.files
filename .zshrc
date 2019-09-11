@@ -71,4 +71,4 @@ export EDITOR=vim
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
-alias install="pacaur -Slq | fzf -m --preview 'pacaur -Si {1}' | xargs -r pacaur -S"
+alias install="pacman -Slq | fzf -m --preview 'pacman -Si {1}' | xargs -r sudo pacman -S --noconfirm"
