@@ -11,6 +11,7 @@ gaps outer 0
 
 # borders
 default_border pixel 1
+new_float pixel 1
 
 client.focused #f8f8f2 #f8f8f2 #f8f8f2 #f8f8f2
 client.unfocused #a9a9a9 #a9a9a9 #a9a9a9 #a9a9a9
