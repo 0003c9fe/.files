@@ -25,8 +25,8 @@ fi
 #shopt -s no_empty_cmd_completion
 source /home/jack/.mpv/shellrc.sh
 
-PS1='➜ '
-#PS1='%B%F{red}%m%f%F{cyan} %1~ $%f%b '
+#PS1='➜ '
+PS1='%B%F{red}%m%f%F{cyan} %1~ $%f%b '
 alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
@@ -46,8 +46,6 @@ man() {
 
 autoload -Uz promptinit
 promptinit
-
-source /usr/share/doc/pkgfile/command-not-found.zsh
 
 eval $(thefuck --alias)
 
