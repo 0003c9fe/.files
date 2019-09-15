@@ -1,0 +1,19 @@
+rofi.font: RobotoMono 14
+! 14d / 16l
+rofi.bw: 1
+rofi.padding: 10
+rofi.width: 600
+rofi.lines: 10
+rofi.drun-match-fields: name
+rofi.drun-display-format: {name}
+rofi.disable-history: true
+rofi.eh: 1
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
+rofi.scroll-method: 1
+rofi.display-drun: run
+
+rofi.color-normal: #00000000, #a9a9a9, #00000000, #00000000, #f8f8f2
+rofi.color-urgent: #00000000, #a9a9a9, #00000000, #00000000, #f8f8f2
+rofi.color-active: #00000000, #a9a9a9, #00000000, #00000000, #f8f8f2
+rofi.color-window: #cc101010

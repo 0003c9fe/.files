@@ -1,7 +1,7 @@
 set $mod Mod4
 # --WINDOW SETTINGS--
 
-# font for window titles
+# font
 font pango:RobotoMono 10
 # 10d / 12l
 
