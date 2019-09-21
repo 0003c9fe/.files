@@ -34,4 +34,5 @@ set wildmenu
 let &t_Co=16
 map <F5> :RMarkdown pdf<CR>
 
+highlight Conceal ctermfg=Yellow ctermbg=Black
 autocmd VimLeave *.tex !tex-clear %
