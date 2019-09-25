@@ -8,9 +8,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
+HISTFILE=~/.histfile
 setopt appendhistory autocd extendedglob
 unsetopt beep
 bindkey -v
@@ -25,7 +25,6 @@ fi
 #shopt -s no_empty_cmd_completion
 source /home/jack/.mpv/shellrc.sh
 
-#PS1='➜ '
 PS1='%B%F{red}%m%f%F{cyan} %1~ $%f%b '
 alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
@@ -70,3 +69,5 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
 alias install="pacman -Slq | fzf -m --preview 'pacman -Si {1}' | xargs -r sudo pacman -S --noconfirm"
+
+
