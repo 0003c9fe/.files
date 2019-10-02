@@ -17,7 +17,7 @@ let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
-set number
+set number relativenumber
 set shortmess=F
 set encoding=utf-8
 set ignorecase
