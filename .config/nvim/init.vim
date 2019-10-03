@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.nvim/plugged')
 Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
 Plug 'tpope/vim-fugitive'
