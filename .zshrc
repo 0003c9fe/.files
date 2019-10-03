@@ -63,7 +63,8 @@ alias rmlock='sudo rm /var/lib/pacman/db.lck'
 
 alias scim='sc-im'
 
-export EDITOR=vim
+export EDITOR=nvim
+alias vim=nvim
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh

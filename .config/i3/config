@@ -2,7 +2,7 @@ set $mod Mod4
 # --WINDOW SETTINGS--
 
 # font
-font pango:RobotoMono 10
+font pango:RobotoMono 0
 # 10d / 12l
 
 # gap settings
@@ -182,6 +182,7 @@ bar {
 		urgent_workspace #101010cc #101010cc #a9a9a9
 	}
 	tray_output none
+        font pango:RobotoMono 10
 	bindsym button1 nop
 	bindsym button4 nop
 	bindsym button5 nop
