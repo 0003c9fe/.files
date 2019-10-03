@@ -133,13 +133,13 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 # open terminal
 bindsym $mod+Return exec i3-sensible-terminal
 # dropdown terminal
-set $term --no-startup-id urxvt
+set $term --no-startup-id kitty
 bindsym $mod+Delete		[instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] resize set 1200 700
 exec --no-startup-id $term -name dropdown
-bindsym $mod+Shift+Delete exec --no-startup-id $term -name dropdown
+bindsym $mod+Shift+Delete exec --no-startup-id $term --name dropdown
 
 # applications 
 bindsym $mod+d exec rofi -show drun
