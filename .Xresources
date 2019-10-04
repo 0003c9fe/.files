@@ -1,1 +1,2 @@
+#include ".config/st"
 #include ".config/rofi"

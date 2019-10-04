@@ -31,7 +31,7 @@ set hlsearch
 set linebreak
 set wrap
 set wildmenu
-let&t_Co=16
+set t_Co=256
 map <F5> :RMarkdown pdf<CR>
 
 highlight Conceal ctermfg=Yellow ctermbg=None
@@ -39,3 +39,5 @@ autocmd VimLeave *.tex !tex-clear %
 autocmd FileType tex setlocal spell
 set spelllang=en_gb
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+set laststatus=2
