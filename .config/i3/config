@@ -2,7 +2,7 @@ set $mod Mod4
 # --WINDOW SETTINGS--
 
 # font
-font pango:RobotoMono 10
+font pango:RobotoMono 12
 # 10d/12l
 
 # gap settings
@@ -132,8 +132,8 @@ bindsym $mod+Delete		[instance="dropdown"] scratchpad show; [instance="dropdown"
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] resize set 1200 700
-exec --no-startup-id st -f RobotoMono-11 -n dropdown
-bindsym $mod+Shift+Delete exec --no-startup-id st -f RobotoMono-11 -n dropdown
+exec --no-startup-id st -f RobotoMono-12 -n dropdown
+bindsym $mod+Shift+Delete exec --no-startup-id st -f RobotoMono-12 -n dropdown
 
 # applications 
 bindsym $mod+d exec rofi -show drun
