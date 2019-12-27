@@ -1,7 +1,6 @@
 call plug#begin('~/.nvim/plugged')
 Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
-Plug 'tpope/vim-fugitive'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-rmarkdown'

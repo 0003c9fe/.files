@@ -70,8 +70,8 @@ bindsym $mod+a focus parent
 set $workspace1 "1. "
 set $workspace2 "2. "
 set $workspace3 "3. "
-set $workspace4 "4. "
-set $workspace5 "5. "
+set $workspace4 "4. "
+set $workspace5 "5. "
 set $workspace6 "6. "
 set $workspace7 "7. "
 set $workspace8 "8. "
@@ -105,7 +105,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 # workspace assigning
 assign [class="(?i)firefox"] $workspace1
 assign [class="discord"] $workspace2
-assign [class="(?i)steam"] $workspace4
+assign [class="(?i)steam"] $workspace5
 assign [class="(?i)zathura"] $workspace3
 assign [class="(?i)mathematica"] $workspace3
 for_window [class="Spotify"] move to workspace $workspace10
@@ -142,12 +142,15 @@ bindsym $mod+w exec st -e ranger
 # lock screen / shutdown / reboot
 bindsym $mod+BackSpace exec dmenu-system
 
+# emoji picker
+bindsym $mod+u exec dmenu-unicode
+
 # screenshots
 bindsym --release Print exec maim -u -s ~/$(date +%F-%s).png
 bindsym $mod+Print exec maim -u ~/$(date +%F-%s).png
 
 # screencasts
-bindsym $mod+backslash exec screencast && notify-send "Recording started"
+bindsym $mod+backslash exec notify-send "Recording started" && screencast
 bindsym $mod+Shift+backslash exec killall -INT ffmpeg && notify-send "Recording stopped"
 
 # mounting

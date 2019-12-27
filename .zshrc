@@ -61,8 +61,6 @@ eval "$(dircolors ~/.dircolors)";
 
 alias rmlock='sudo rm /var/lib/pacman/db.lck'
 
-alias scim='sc-im'
-
 export EDITOR=nvim
 alias vim=nvim
 
@@ -70,5 +68,3 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
 alias install="pacman -Slq | fzf -m --preview 'pacman -Si {1}' | xargs -r sudo pacman -S --noconfirm"
-
-
