@@ -31,7 +31,7 @@ alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 
-alias sysmaintenance='pacaur -Syu && pacaur -Rns $(pacaur -Qtdq)'
+alias sysmaintenance='yay -Syu && yay -Rns $(yay -Qtdq)'
 
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
