@@ -2,7 +2,7 @@ set $mod Mod4
 # --WINDOW SETTINGS--
 
 # font
-font pango:RobotoMono 12
+font pango:RobotoMono 10
 # 10d/12l
 
 # gap settings
@@ -108,7 +108,6 @@ assign [class="discord"] $workspace2
 assign [class="(?i)steam"] $workspace5
 assign [class="(?i)zathura"] $workspace3
 assign [class="(?i)mathematica"] $workspace3
-for_window [class="Spotify"] move to workspace $workspace10
 
 # --KEYBINDINGS--
 
@@ -132,8 +131,11 @@ bindsym $mod+Delete		[instance="dropdown"] scratchpad show; [instance="dropdown"
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] resize set 1200 700
-exec --no-startup-id st -f RobotoMono-12 -n dropdown
-bindsym $mod+Shift+Delete exec --no-startup-id st -f RobotoMono-12 -n dropdown
+exec --no-startup-id st -f RobotoMono-11 -n dropdown
+bindsym $mod+Shift+Delete exec --no-startup-id st -f RobotoMono-11 -n dropdown
+# spotify-tui terminal
+exec --no-startup-id st -f RobotoMono-11 -n spt -e spt
+assign [instance="spt"] $workspace10
 
 # applications 
 bindsym $mod+d exec rofi -show drun
@@ -165,7 +167,6 @@ exec_always --no-startup-id ~/.fehbg
 exec compton -b
 # mouse hider
 exec --no-startup-id unclutter --timeout 3 -jitter 5 --ignore-scrolling
-exec spotify
 exec discord
 
 # --STATUS BAR--
