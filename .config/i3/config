@@ -173,11 +173,11 @@ exec discord
 bar {
       status_command i3blocks
 	colors {
-		background #101010cc
-		separator #101010cc
-		focused_workspace #101010cc #101010cc #f8f8f2
-		inactive_workspace #101010cc #101010cc #a9a9a9
-		urgent_workspace #101010cc #101010cc #a9a9a9
+		background #10101000
+		separator #10101000
+		focused_workspace #10101000 #10101000 #f8f8f2
+		inactive_workspace #10101000 #10101000 #a9a9a9
+		urgent_workspace #10101000 #10101000 #a9a9a9
 	}
 	tray_output none
 	bindsym button1 nop
