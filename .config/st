@@ -1,8 +1,8 @@
 ! Transparency
-st.alpha: 0.8
+st.alpha: 1.0
 
 ! Font
-st.font: RobotoMono-12;
+st.font: RobotoMono-11;
 ! 11d/12l
 
 ! Background, foreground, cursor

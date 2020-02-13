@@ -133,9 +133,6 @@ for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] resize set 1200 700
 exec --no-startup-id st -f RobotoMono-11 -n dropdown
 bindsym $mod+Shift+Delete exec --no-startup-id st -f RobotoMono-11 -n dropdown
-# spotify-tui terminal
-exec --no-startup-id st -f RobotoMono-11 -n spt -e spt
-assign [instance="spt"] $workspace10
 
 # applications 
 bindsym $mod+d exec rofi -show drun
@@ -168,6 +165,7 @@ exec compton -b
 # mouse hider
 exec --no-startup-id unclutter --timeout 3 -jitter 5 --ignore-scrolling
 exec discord
+exec spotify
 
 # --STATUS BAR--
 bar {
