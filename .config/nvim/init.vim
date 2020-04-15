@@ -16,6 +16,9 @@ let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
+syntax on
+filetype indent plugin on
+set clipboard=unnamedplus
 set number relativenumber
 set shortmess=F
 set encoding=utf-8

@@ -2,7 +2,7 @@
 st.alpha: 1.0
 
 ! Font
-st.font: RobotoMono-11;
+st.font: RobotoMono-12;
 ! 11d/12l
 
 ! Background, foreground, cursor

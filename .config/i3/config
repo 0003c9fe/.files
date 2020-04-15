@@ -1,8 +1,10 @@
 set $mod Mod4
+bindsym $mod+z exec xdotool mousemove 280 485 click --repeat 200 --delay 142 1
+bindsym $mod+x [class="(?i)firefox"] floating enable, resize set 700 500, move position center, fullscreen toggle
 # --WINDOW SETTINGS--
 
 # font
-font pango:RobotoMono 10
+font pango:RobotoMono 12
 # 10d/12l
 
 # gap settings
@@ -115,7 +117,7 @@ for_window [class="Spotify"] move to workspace $workspace10
 # media controls 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && pkill -RTMIN+10 i3blocks #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && pkill -RTMIN+10 i3blocks #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 i3blocks # mute sound
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioStop exec playerctl stop
 bindsym XF86AudioNext exec playerctl next 
@@ -124,6 +126,9 @@ bindsym XF86AudioPrev exec playerctl previous
 # backlight controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+
+# network manager
+bindsym $mod+n exec networkmanager_dmenu
 
 # open terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -145,13 +150,13 @@ bindsym $mod+BackSpace exec dmenu-system
 # emoji picker
 bindsym $mod+u exec dmenu-unicode
 
+# constants menu
+bindsym $mod+c exec dmenu-constants
+
 # screenshots
 bindsym --release Print exec maim -u -s ~/$(date +%F-%s).png
+bindsym Shift+Print exec maim -u -s | xclip -selection clipboard -t image/png
 bindsym $mod+Print exec maim -u ~/$(date +%F-%s).png
-
-# screencasts
-bindsym $mod+backslash exec notify-send "Recording started" && screencast
-bindsym $mod+Shift+backslash exec killall -INT ffmpeg && notify-send "Recording stopped"
 
 # mounting
 bindsym $mod+m exec --no-startup-id dmenu-mount
@@ -165,7 +170,7 @@ exec_always --no-startup-id ~/.fehbg
 exec compton -b
 # mouse hider
 exec --no-startup-id unclutter --timeout 3 -jitter 5 --ignore-scrolling
-exec discord
+#exec discord
 exec spotify
 
 # --STATUS BAR--
