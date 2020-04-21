@@ -147,6 +147,9 @@ bindsym $mod+w exec st -e ranger
 # lock screen / shutdown / reboot
 bindsym $mod+BackSpace exec dmenu-system
 
+# display manager
+bindsym $mod+p exec dmenu-display
+
 # emoji picker
 bindsym $mod+u exec dmenu-unicode
 
