@@ -140,6 +140,11 @@ for_window [instance="dropdown"] resize set 1200 700
 exec --no-startup-id st -f RobotoMono-11 -n dropdown
 bindsym $mod+Shift+Delete exec --no-startup-id st -f RobotoMono-11 -n dropdown
 
+# firefox picture-in-picture
+for_window [title="(?i)picture-in-picture"] sticky enable
+for_window [title="(?i)picture-in-picture"] move scratchpad, scratchpad show
+bindsym $mod+v [title="(?i)picture-in-picture"] scratchpad show
+
 # applications 
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+w exec st -e ranger
