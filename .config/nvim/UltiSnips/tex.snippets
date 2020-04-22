@@ -102,12 +102,39 @@ snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
 \\frac{`!p snip.rv = match.group(1)`}{$1}$0
 endsnippet
 
-snippet lim "limit" w
+context "math()"
+snippet lim "limit" wA
 \lim_{$1 \to $2}$0
 endsnippet
 
-snippet sum "sum" w
+context "math()"
+snippet sum "sum" wA
 \sum_{$1 = $2}^{$3}$0
+endsnippet
+
+context "math()"
+snippet prod "product" wA
+\prod_{$1 = $2}^{$3}$0
+endsnippet
+
+context "math()"
+snippet int "Integral" wA
+\int_{$1}^{$2}$0
+endsnippet
+
+context "math()"
+snippet iint "Double integral" wA
+\iint_{$1}$0
+endsnippet
+
+context "math()"
+snippet iiint "Triple integral" wA
+\iiint_{$1}$0
+endsnippet
+
+context "math()"
+snippet oint "Closed loop integral" wA
+\oint_{$1}$0
 endsnippet
 
 snippet ooo "\infty" iA

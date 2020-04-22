@@ -9,13 +9,50 @@ Plug 'vim-pandoc/vim-rmarkdown'
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
+" CoC settings
+" Cycle completion options
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Open completion menu
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Completion menu colours
+highlight Pmenu ctermbg=darkgrey ctermfg=white
+highlight PmenuSel ctermbg=magenta ctermfg=white
+
+" Accept completion option
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Documentation
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
 " Vimtex / UltiSnips settings
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=2
 let g:tex_conceal='abdmg'
-let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsExpandTrigger='�'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 highlight Conceal ctermfg=Yellow ctermbg=None
@@ -23,6 +60,10 @@ autocmd VimLeave *.tex !tex-clear %
 autocmd FileType tex setlocal spell
 set spelllang=en_gb
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+" Always show signcolumns
+set signcolumn=yes
+highlight clear SignColumn
 
 " Line numbers
 set number relativenumber
@@ -46,7 +87,7 @@ set expandtab
 set softtabstop=4
 
 " Height below status bar
-set cmdheight=1
+set cmdheight=2
 
 " CursorHold timing
 set updatetime=300
