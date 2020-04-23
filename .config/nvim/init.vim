@@ -27,7 +27,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " Completion menu colours
 highlight Pmenu ctermbg=darkgrey ctermfg=white
-highlight PmenuSel ctermbg=magenta ctermfg=white
+highlight PmenuSel ctermbg=green ctermfg=white
 
 " Accept completion option
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -81,6 +81,9 @@ set incsearch
 " Highlight search matches
 set hlsearch
 
+" Clear search highlighting
+nnoremap <silent> <esc> :nohlsearch<CR>
+
 " Indentation
 set autoindent
 set expandtab
@@ -98,9 +101,6 @@ set shortmess+=c
 " Highlight matching brackets
 set showmatch
 set matchtime=2
-
-" Disable line wrapping
-set nowrap
 
 " Don't break words to wrap
 set linebreak
