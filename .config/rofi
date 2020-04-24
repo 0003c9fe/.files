@@ -13,7 +13,7 @@ rofi.hide-scrollbar: true
 rofi.scroll-method: 1
 rofi.display-drun: run
 
-rofi.color-normal: #00000000, #a9a9a9, #00000000, #00000000, #f8f8f2
-rofi.color-urgent: #00000000, #a9a9a9, #00000000, #00000000, #f8f8f2
-rofi.color-active: #00000000, #a9a9a9, #00000000, #00000000, #f8f8f2
-rofi.color-window: #cc101010
+rofi.color-normal: #00000000, #a8a19f, #00000000, #00000000, #f1efee
+rofi.color-urgent: #00000000, #a8a19f, #00000000, #00000000, #f1efee
+rofi.color-active: #00000000, #a8a19f, #00000000, #00000000, #f1efee
+rofi.color-window: #cc1b1918

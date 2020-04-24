@@ -15,12 +15,12 @@ gaps outer 0
 default_border pixel 1
 new_float pixel 1
 
-client.focused #f8f8f2 #f8f8f2 #f8f8f2 #f8f8f2
-client.unfocused #a9a9a9 #a9a9a9 #a9a9a9 #a9a9a9
-client.focused_inactive #f8f8f2 #f8f8f2 #f8f8f2 #f8f8f2
-client.urgent #a9a9a9 #a9a9a9 #a9a9a9 #a9a9a9
-client.placeholder #f8f8f2 #f8f8f2 #f8f8f2 #f8f8f2
-client.background #f8f8f2 #f8f8f2 #f8f8f2 #f8f8f2
+client.focused #f1efee #f8f8f2 #f8f8f2 #f8f8f2
+client.unfocused #a8a19f #a8a19f #a8a19f #a8a19f
+client.focused_inactive #f1efee #f8f8f2 #f8f8f2 #f8f8f2
+client.urgent #a8a19f #a8a19f #a8a19f #a8a19f
+client.placeholder #f1efee #f8f8f2 #f8f8f2 #f8f8f2
+client.background #f1efee #f8f8f2 #f8f8f2 #f8f8f2
 
 for_window [window_role="(?i)GtkFileChooserDialog"] border pixel 1, resize set 1200 700, move position center
 
@@ -185,11 +185,11 @@ exec spotify
 bar {
       status_command i3blocks
 	colors {
-		background #10101000
-		separator #10101000
-		focused_workspace #10101000 #10101000 #f8f8f2
-		inactive_workspace #10101000 #10101000 #a9a9a9
-		urgent_workspace #10101000 #10101000 #a9a9a9
+		background #1b1918
+		separator #1b1918
+		focused_workspace #1b1918 #1b1918 #f1efee
+		inactive_workspace #1b1918 #1b1918 #a8a19f
+		urgent_workspace #1b1918 #1b1918 #a8a19f
 	}
 	tray_output none
 	bindsym button1 nop
