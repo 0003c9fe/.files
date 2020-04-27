@@ -1,3 +1,6 @@
+set nocompatible
+packadd vimball
+
 " Plugins
 call plug#begin('~/.nvim/plugged')
 Plug 'lervag/vimtex'
