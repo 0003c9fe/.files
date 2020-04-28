@@ -1,7 +1,7 @@
 TMPBG1=/tmp/original.png
 TMPBG2=/tmp/locked.png
 LOCK=/home/jack/.config/i3/lock.png
-RES=1600x900
+RES=1920x1080
 
 sleep 0.12
 ffmpeg -f x11grab -video_size $RES -y -i $DISPLAY -vframes 1 $TMPBG1
