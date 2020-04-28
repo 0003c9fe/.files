@@ -173,7 +173,7 @@ bindsym $mod+v [title="(?i)picture-in-picture"] scratchpad show
 # --AUTOSTART PROGRAMS--
 
 # wallpaper
-exec_always --no-startup-id feh --no-fehbg --bg-fill '~/.local/share/wallpaper.png'
+exec_always --no-startup-id feh --no-fehbg --bg-fill '/home/jack/.local/share/wallpaper.png'
 
 # compositor
 exec compton -b
