@@ -124,7 +124,7 @@ bindsym $mod+w exec st -e ranger # file manager
 bindsym $mod+BackSpace exec system
 
 # display manager
-bindsym $mod+p exec display
+bindsym $mod+p exec dmenu-display
 
 # screenshots
 bindsym --release Print exec maim -u -s ~/Pictures/$(date +%F-%s).png
@@ -173,7 +173,7 @@ bindsym $mod+v [title="(?i)picture-in-picture"] scratchpad show
 # --AUTOSTART PROGRAMS--
 
 # wallpaper
-exec_always --no-startup-id feh --no-fehbg --bg-fill '/home/jack/.local/share/wallpaper.png'
+exec_always --no-startup-id feh --no-fehbg --bg-tile '/home/jack/.local/share/wallpaper.png'
 
 # compositor
 exec compton -b
