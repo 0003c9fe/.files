@@ -173,7 +173,7 @@ bindsym $mod+Shift+m exec --no-startup-id dmenu-umount
 # --AUTOSTART PROGRAMS--
 
 # wallpaper
-exec_always --no-startup-id ~/.fehbg
+exec_always --no-startup-id feh --no-fehbg --bg-fill '~/.config/i3/background.png'
 # compositor
 exec compton -b
 # mouse hider
