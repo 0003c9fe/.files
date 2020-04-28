@@ -1,6 +1,5 @@
 set $mod Mod4
-bindsym $mod+z exec xdotool mousemove 280 485 click --repeat 200 --delay 142 1
-bindsym $mod+x [class="(?i)firefox"] floating enable, resize set 700 500, move position center, fullscreen toggle
+
 # --WINDOW SETTINGS--
 
 # font
@@ -14,7 +13,6 @@ gaps outer 0
 # borders
 default_border pixel 1
 new_float pixel 1
-
 client.focused #f1efee #f8f8f2 #f8f8f2 #f8f8f2
 client.unfocused #a8a19f #a8a19f #a8a19f #a8a19f
 client.focused_inactive #f1efee #f8f8f2 #f8f8f2 #f8f8f2
@@ -22,7 +20,8 @@ client.urgent #a8a19f #a8a19f #a8a19f #a8a19f
 client.placeholder #f1efee #f8f8f2 #f8f8f2 #f8f8f2
 client.background #f1efee #f8f8f2 #f8f8f2 #f8f8f2
 
-for_window [window_role="(?i)GtkFileChooserDialog"] border pixel 1, resize set 1200 700, move position center
+# maximum floating window size
+floating_maximum_size 1200 x 700
 
 # change window focus
 bindsym $mod+Left focus left
@@ -114,6 +113,31 @@ for_window [class="Spotify"] move to workspace $workspace10
 
 # --KEYBINDINGS--
 
+# open terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# applications 
+bindsym $mod+d exec rofi -show drun # application menu
+bindsym $mod+w exec st -e ranger # file manager
+
+# lock screen / shutdown / reboot
+bindsym $mod+BackSpace exec dmenu-system
+
+# display manager
+bindsym $mod+p exec dmenu-display
+
+# screenshots
+bindsym --release Print exec maim -u -s ~/Pictures/$(date +%F-%s).png
+bindsym Shift+Print exec maim -u -s | xclip -selection clipboard -t image/png
+bindsym $mod+Print exec maim -u ~/Pictures/$(date +%F-%s).png
+
+# mounting
+bindsym $mod+m exec --no-startup-id dmenu-mount
+bindsym $mod+Shift+m exec --no-startup-id dmenu-umount
+
+# network manager
+bindsym $mod+n exec networkmanager_dmenu
+
 # media controls 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && pkill -RTMIN+10 i3blocks #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && pkill -RTMIN+10 i3blocks #decrease sound volume
@@ -127,12 +151,13 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
-# network manager
-bindsym $mod+n exec networkmanager_dmenu
+# emoji picker
+bindsym $mod+u exec dmenu-unicode
 
-# open terminal
-bindsym $mod+Return exec i3-sensible-terminal
-# dropdown terminal
+# constants menu
+bindsym $mod+c exec dmenu-constants
+
+# --DROPDOWN TERMINAL
 bindsym $mod+Delete		[instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] move scratchpad
@@ -140,46 +165,21 @@ for_window [instance="dropdown"] resize set 1200 700
 exec --no-startup-id st -f RobotoMono-11 -n dropdown
 bindsym $mod+Shift+Delete exec --no-startup-id st -f RobotoMono-11 -n dropdown
 
-# firefox picture-in-picture
+# --PICTURE IN PICTURE--
 for_window [title="(?i)picture-in-picture"] sticky enable
 for_window [title="(?i)picture-in-picture"] move scratchpad, scratchpad show
 bindsym $mod+v [title="(?i)picture-in-picture"] scratchpad show
-
-# applications 
-bindsym $mod+d exec rofi -show drun
-bindsym $mod+w exec st -e ranger
-
-# lock screen / shutdown / reboot
-bindsym $mod+BackSpace exec dmenu-system
-
-# display manager
-bindsym $mod+p exec dmenu-display
-
-# emoji picker
-bindsym $mod+u exec dmenu-unicode
-
-# constants menu
-bindsym $mod+c exec dmenu-constants
-
-# screenshots
-bindsym --release Print exec maim -u -s ~/Pictures/$(date +%F-%s).png
-bindsym Shift+Print exec maim -u -s | xclip -selection clipboard -t image/png
-bindsym $mod+Print exec maim -u ~/Pictures/$(date +%F-%s).png
-
-# mounting
-bindsym $mod+m exec --no-startup-id dmenu-mount
-bindsym $mod+Shift+m exec --no-startup-id dmenu-umount
 
 # --AUTOSTART PROGRAMS--
 
 # wallpaper
 exec_always --no-startup-id feh --no-fehbg --bg-fill '~/.config/i3/background.png'
+
 # compositor
 exec compton -b
+
 # mouse hider
 exec --no-startup-id unclutter --timeout 3 -jitter 5 --ignore-scrolling
-#exec discord
-exec spotify
 
 # --STATUS BAR--
 bar {
@@ -197,6 +197,7 @@ bar {
 	bindsym button5 nop
 	i3bar_command i3bar -t
 }
+
 # --RESIZE--
 
 bindsym $mod+r mode "resize"
