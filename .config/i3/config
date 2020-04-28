@@ -173,7 +173,7 @@ bindsym $mod+v [title="(?i)picture-in-picture"] scratchpad show
 # --AUTOSTART PROGRAMS--
 
 # wallpaper
-exec_always --no-startup-id feh --no-fehbg --bg-fill '~/.config/i3/background.png'
+exec_always --no-startup-id feh --no-fehbg --bg-fill '~/.local/share/wallpaper.png'
 
 # compositor
 exec compton -b

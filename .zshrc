@@ -56,7 +56,7 @@ alias neofetch='clear && neofetch'
 alias pd='mpv --really-quiet $PWD &
 disown && exit'
 
-eval "$(dircolors ~/.dircolors)";
+eval "$(dircolors ~/.local/share/dircolors)";
 
 alias rmlock='sudo rm /var/lib/pacman/db.lck'
 

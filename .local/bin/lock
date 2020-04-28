@@ -1,6 +1,6 @@
 TMPBG1=/tmp/original.png
 TMPBG2=/tmp/locked.png
-LOCK=/home/jack/.config/i3/lock.png
+LOCK=/home/jack/.local/share/lock.png
 RES=1920x1080
 
 sleep 0.12
