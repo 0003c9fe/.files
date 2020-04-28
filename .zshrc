@@ -23,7 +23,6 @@ fi
 #shopt -s checkwinsize
 
 #shopt -s no_empty_cmd_completion
-source /home/jack/.mpv/shellrc.sh
 
 PS1='%B%F{red}%m%f%F{cyan} %1~ $%f%b '
 alias ls='ls --color=auto'
@@ -54,7 +53,7 @@ alias c='clear'
 
 alias neofetch='clear && neofetch'
 
-alias music='mpv --really-quiet $PWD &
+alias pd='mpv --really-quiet $PWD &
 disown && exit'
 
 eval "$(dircolors ~/.dircolors)";
