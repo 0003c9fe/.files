@@ -1,9 +1,9 @@
 #!/bin/bash
 ANS=$(echo -e " Laptop\n TV" | rofi -dmenu -i -p 'Display')
 if [ "$ANS" == " Laptop" ] ; then
-	exec ~/.screenlayout/laptop.sh
+	exec ~/.local/share/screenlayouts/laptop
 elif [ "$ANS" == " TV" ] ; then
-	exec ~/.screenlayout/tv.sh
+	exec ~/.local/share/screenlayouts/tv
 else
 	:
 fi
