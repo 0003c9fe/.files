@@ -51,8 +51,6 @@ alias cdc='cd && clear'
 
 alias c='clear'
 
-alias neofetch='clear && neofetch'
-
 alias pd='mpv --really-quiet $PWD &
 disown && exit'
 
