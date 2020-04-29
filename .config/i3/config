@@ -157,6 +157,9 @@ bindsym $mod+u exec unicode-menu
 # constants menu
 bindsym $mod+c exec constants-menu
 
+# zoom menu
+bindsym $mod+z exec zoom-menu
+
 # --DROPDOWN TERMINAL
 bindsym $mod+Delete		[instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 for_window [instance="dropdown"] floating enable
