@@ -3,7 +3,7 @@ set $mod Mod4
 # --WINDOW SETTINGS--
 
 # font
-font pango:RobotoMono 12
+font pango:RobotoMono 10
 # 10d/12l
 
 # gap settings
@@ -11,8 +11,8 @@ gaps inner 10
 gaps outer 0
 
 # borders
-default_border pixel 1
-new_float pixel 1
+default_border pixel 2
+new_float pixel 2
 client.focused #f1efee #f8f8f2 #f8f8f2 #f8f8f2
 client.unfocused #a8a19f #a8a19f #a8a19f #a8a19f
 client.focused_inactive #f1efee #f8f8f2 #f8f8f2 #f8f8f2
