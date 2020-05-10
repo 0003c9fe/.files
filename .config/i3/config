@@ -118,7 +118,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # applications 
 bindsym $mod+d exec rofi -show drun # application menu
-bindsym $mod+w exec st -e ranger # file manager
+bindsym $mod+Shift+w exec st -e ranger # file manager
 
 # lock screen / shutdown / reboot
 bindsym $mod+BackSpace exec system-menu
@@ -160,13 +160,20 @@ bindsym $mod+c exec constants-menu
 # zoom menu
 bindsym $mod+z exec zoom-menu
 
-# --DROPDOWN TERMINAL
-bindsym $mod+Delete		[instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+# --DROPDOWN TERMINAL--
+bindsym $mod+Delete [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] resize set 1200 700
 exec --no-startup-id st -f RobotoMono-11 -n dropdown
 bindsym $mod+Shift+Delete exec --no-startup-id st -f RobotoMono-11 -n dropdown
+
+# --FILE MANAGER
+bindsym $mod+w [instance="files"] scratchpad show; [instance="files"] move position center
+for_window [instance="files"] floating enable
+for_window [instance="files"] move scratchpad
+for_window [instance="files"] resize set 1200 700
+exec --no-startup-id st -f RobotoMono-11 -n files -e ranger
 
 # --PICTURE IN PICTURE--
 for_window [title="(?i)picture-in-picture"] sticky enable
