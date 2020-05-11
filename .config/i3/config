@@ -3,7 +3,7 @@ set $mod Mod4
 # --WINDOW SETTINGS--
 
 # font
-font pango:RobotoMono 10
+font pango:RobotoMono 12
 # 10d/12l
 
 # gap settings

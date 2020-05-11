@@ -1,5 +1,4 @@
 set nocompatible
-packadd vimball
 
 " Plugins
 call plug#begin('~/.nvim/plugged')
@@ -52,6 +51,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Vimtex / UltiSnips settings
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
+let g:vimtex_view_forward_search_on_start=0
 let g:vimtex_quickfix_mode=0
 set conceallevel=2
 let g:tex_conceal='abdmg'
