@@ -6,10 +6,10 @@
     shrink = yes
     transparency = 20
     notification_height = 0
-    separator_height = 1
+    separator_height = 2
     padding = 0
     horizontal_padding = 8
-    frame_width = 1
+    frame_width = 2
 
     # Define a color for the separator.
     # possible values are:
@@ -52,7 +52,7 @@
     #icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/Adwaita/256x256/status/
     sticky_history = yes
     history_length = 20
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/bin/rofi -dmenu -i -p "Notification"
     browser = /usr/bin/firefox -new-tab
 
     # Always run rule-defined scripts, even if the notification is suppressed
@@ -74,20 +74,20 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#101010"
-    foreground = "#f8f8f2"
+    background = "#1b1918"
+    foreground = "#f1efee"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
-        [urgency_normal]
-            background = "#101010"
-    foreground = "#f8f8f2"
+[urgency_normal]
+    background = "#1b1918"
+    foreground = "#f1efee"
     timeout = 5
 
 [urgency_critical]
-    background = "#101010"
-    foreground = "#f8f8f2"
+    background = "#1b1918"
+    foreground = "#f1efee"
     frame_color = "#ff0000"
     timeout = 0
 
