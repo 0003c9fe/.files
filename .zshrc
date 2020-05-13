@@ -25,10 +25,9 @@ fi
 #shopt -s no_empty_cmd_completion
 
 PS1='%B%F{red}%m%f%F{cyan} %1~ $%f%b '
-alias ls='ls --color=auto'
-alias grep='grep --colour=auto'
-alias egrep='egrep --colour=auto'
-alias fgrep='fgrep --colour=auto'
+alias ls='exa --icons --color=auto'
+alias grep='rg --colour=auto'
+alias find='fd'
 
 alias sysmaintenance='yay -Syu && yay -Rns $(yay -Qtdq)'
 

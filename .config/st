@@ -2,7 +2,8 @@
 st.alpha: 1.0
 
 ! Font
-st.font: RobotoMono-12;
+!st.font: RobotoMono-12;
+st.font: RobotoMono Nerd Font-12;
 ! 11d/12l
 
 ! special
