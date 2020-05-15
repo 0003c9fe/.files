@@ -10,23 +10,15 @@ compinit
 # Lines configured by zsh-newuser-install
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.histfile
+HISTFILE=~/.cache/zsh/history
 setopt appendhistory autocd extendedglob
 unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
-if [[ $- != *i* ]] ; then
-	return
-fi
-
-#shopt -s checkwinsize
-
-#shopt -s no_empty_cmd_completion
-
 PS1='%B%F{red}%m%f%F{cyan} %1~ $%f%b '
-alias ls='exa --icons --color=auto'
-alias grep='rg --colour=auto'
+alias ls='exa --icons'
+alias grep='rg'
 alias find='fd'
 
 alias sysmaintenance='yay -Syu && yay -Rns $(yay -Qtdq)'
