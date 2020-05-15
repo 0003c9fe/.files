@@ -1,13 +1,7 @@
-# The following lines were added by compinstall
-
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
 zstyle ':completion:*' max-errors 1 numeric
 zstyle :compinstall filename '/home/jack/.zshrc'
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
@@ -32,9 +26,6 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
 }
-
-autoload -Uz promptinit
-promptinit
 
 eval $(thefuck --alias)
 
