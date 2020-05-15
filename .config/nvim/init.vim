@@ -9,6 +9,8 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-rmarkdown'
 Plug 'jiangmiao/auto-pairs'
+Plug 'ryanoasis/vim-devicons'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 call plug#end()
 
 " CoC settings
@@ -58,7 +60,7 @@ let g:tex_conceal='abdmg'
 let g:UltiSnipsExpandTrigger='�'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
-highlight Conceal ctermfg=Yellow ctermbg=None
+highlight Conceal ctermfg=Red ctermbg=None
 autocmd VimLeave *.tex !tex-clear %
 autocmd FileType tex setlocal spell
 set spelllang=en_gb
