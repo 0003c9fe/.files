@@ -2,15 +2,20 @@ zstyle ':completion:*' completer _expand _complete _ignored _approximate
 zstyle ':completion:*' max-errors 1 numeric
 zstyle :compinstall filename '/home/jack/.zshrc'
 
+# History
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
+
+# Options
 setopt appendhistory autocd extendedglob
 unsetopt beep
 bindkey -v
-# End of lines configured by zsh-newuser-install
 
+# Prompt
 PS1='%B%F{red}%m%f%F{cyan} %1~ $%f%b '
+
+#Aliases
 alias ls='exa --icons'
 alias grep='rg'
 alias find='fd'
@@ -40,12 +45,12 @@ eval "$(dircolors ~/.local/share/dircolors)";
 
 alias rmlock='sudo rm /var/lib/pacman/db.lck'
 
-export EDITOR=nvim
 alias vim=nvim
 
+alias install="pacman -Slq | fzf -m --preview 'pacman -Si {1}' | xargs -r sudo pacman -S --noconfirm"
+
+# Sources
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-
-alias install="pacman -Slq | fzf -m --preview 'pacman -Si {1}' | xargs -r sudo pacman -S --noconfirm"
 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
