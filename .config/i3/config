@@ -139,9 +139,9 @@ bindsym $mod+Shift+m exec --no-startup-id umount-menu
 bindsym $mod+n exec networkmanager_dmenu
 
 # media controls 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && pkill -RTMIN+10 i3blocks #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && pkill -RTMIN+10 i3blocks #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 i3blocks # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioStop exec playerctl stop
 bindsym XF86AudioNext exec playerctl next 
@@ -179,30 +179,15 @@ bindsym $mod+v [title="(?i)picture-in-picture"] scratchpad show
 exec_always --no-startup-id feh --no-fehbg --bg-tile '/home/jack/.local/share/wallpaper.png'
 
 # compositor
-exec compton -b
+exec picom -b
 
 # mouse hider
 exec --no-startup-id unclutter --timeout 3 -jitter 5 --ignore-scrolling
 
 # --STATUS BAR--
-bar {
-      status_command i3blocks
-	colors {
-		background #1b1918
-		separator #1b1918
-		focused_workspace #1b1918 #1b1918 #f1efee
-		inactive_workspace #1b1918 #1b1918 #a8a19f
-		urgent_workspace #1b1918 #1b1918 #a8a19f
-	}
-	tray_output none
-	bindsym button1 nop
-	bindsym button4 nop
-	bindsym button5 nop
-	i3bar_command i3bar -t
-}
+exec --no-startup-id polybar -r example
 
 # --RESIZE--
-
 bindsym $mod+r mode "resize"
 # resize windows
 mode "resize" {
