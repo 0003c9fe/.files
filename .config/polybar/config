@@ -21,87 +21,74 @@ line-size = 2
 ;right side padding
 padding-right = 2
 
+;module padding
 module-margin-left = 2
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=12;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = font-awesome:pixelsize=10;1
+font-1 = Font Awesome 5 Brands Regular:style=regular:pixelsize=12;1
+font-2 = Font Awesome 5 Free Regular:style=regular:pixelsize=12;1
+font-3 = Font Awesome 5 Free Solid :style=regular:pixelsize=12;1
 
 modules-left = i3
-modules-right = pulseaudio xbacklight wlan eth battery date
+modules-right = pulseaudio package-updates xbacklight wlan eth battery date
 
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
+
+strip-ws-numbers = true
+
+enable-click = false
+enable-scroll = false
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused = %index% %name%
 label-focused-background = ${colors.background}
 label-focused-underline= ${colors.background}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %index% %name%
 label-unfocused-foreground = ${colors.foreground-alt}
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %index% %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %index% %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label>
-label = BL %percentage%%
+label =  %percentage%%
 
 [module/wlan]
 type = internal/network
 interface = wlo1
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #5ab738
-label-connected = %essid%
+label-connected = 
 
-;format-disconnected =
-format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+label-disconnected = 
+label-disconnected-foreground = ${colors.alert}
+format-disconnected-underline = ${colors.background}
 
 [module/eth]
 type = internal/network
 interface = net0
 interval = 3.0
 
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+label-connected = 
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected = 
+label-disconnected-foreground = ${colors.alert}
+format-disconnected-underline = ${colors.background}
 
 [module/date]
 type = internal/date
@@ -116,31 +103,38 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume>
-label-volume = VOL %percentage%%
-label-volume-foreground = ${root.foreground}
+label-volume =   %percentage%%
 
-label-muted = MUTED
+label-muted =   MUTED
 
 [module/battery]
 type = internal/battery
 battery = BAT0
 adapter = AC
 full-at = 98
+poll-interval = 60
 
 time-format = %H:%M
 
+format-charging = <ramp-capacity> <label-charging>
 label-charging = %percentage%% %time%
-format-charging = <label-charging>
-format-charging-underline = #d5911a
 
-label-discharging = %percentage%% %time%
-format-discharging = <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%% (%time%)
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+format-full = <ramp-capacity> <label-full>
+label-full = %percentage%% %time%
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+
+[module/package-updates]
+type = custom/script
+
+exec = ~/.local/bin/package-updates
+interval = 3600
 
 [settings]
 screenchange-reload = true
