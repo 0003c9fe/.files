@@ -36,7 +36,7 @@ modules-right = pulseaudio package-updates xbacklight wlan eth battery date
 [module/i3]
 type = internal/i3
 
-strip-ws-numbers = true
+strip-wsnumbers = true
 
 enable-click = false
 enable-scroll = false

@@ -185,7 +185,7 @@ exec picom -b
 exec --no-startup-id unclutter --timeout 3 -jitter 5 --ignore-scrolling
 
 # --STATUS BAR--
-exec --no-startup-id polybar -r main
+exec_always --no-startup-id $HOME/.config/polybar/launcher
 
 # --RESIZE--
 bindsym $mod+r mode "resize"
