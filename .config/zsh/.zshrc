@@ -49,6 +49,9 @@ alias vim=nvim
 
 alias install="pacman -Slq | fzf -m --preview 'pacman -Si {1}' | xargs -r sudo pacman -S --noconfirm"
 
+alias gs="git status -uno"
+alias gsa="git status"
+
 # Sources
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
