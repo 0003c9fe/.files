@@ -2,16 +2,6 @@
 	--bar-height: 120px;
 }
 
-/*Round corner cover image*/
-.card-image,
-.card-placeholder-wrapper,
-.card-image-content-wrapper,
-.Card:not(.Card--artist) .Card__image,
-.Card:not(.Card--artist) .Card__image-wrapper {
-	border-radius: 10px !important;
-	overflow: hidden !important
-}
-
 /*Hide some annoying elements like profile name and pic, upgrade button and device connect bar at bottom, new playlist button*/
 .profile.content-top-bar__profile-link,
 .upgrade-button,
@@ -132,7 +122,6 @@
 	box-shadow:0 0 0 0 !important;
 	width:50px !important;
 	overflow: visible !important;
-	box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
 	transition:none 0.3s cubic-bezier(.3,0,.7,1);
 }
 

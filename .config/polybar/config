@@ -31,6 +31,7 @@ font-2 = Font Awesome 5 Free Regular:style=regular:pixelsize=10;1
 font-3 = Font Awesome 5 Free Solid :style=regular:pixelsize=10;1
 
 modules-left = i3
+modules-center = spotify
 modules-right = pulseaudio package-updates xbacklight wlan eth battery date
 
 [module/i3]
@@ -138,6 +139,12 @@ type = custom/script
 
 exec = ~/.local/bin/package-updates
 interval = 600
+
+[module/spotify]
+type = custom/script
+interval = 1
+format =  <label>
+exec = python ~/.local/bin/spotify_status.py -f '{artist} - {song}' -t 100
 
 [settings]
 screenchange-reload = true
