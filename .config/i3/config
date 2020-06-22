@@ -63,7 +63,6 @@ floating_modifier $mod
 bindsym $mod+s layout stacking
 bindsym $mod+e layout default
 bindsym $mod+g layout tabbed
-bindsym $mod+a focus parent
 
 # --WORKSPACE SETTINGS--
 
@@ -105,6 +104,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # workspace assigning
 assign [class="(?i)firefox"] $workspace1
+assign [class="(?i)zoom"] $workspace2
 assign [class="discord"] $workspace2
 assign [class="(?i)steam"] $workspace5
 assign [class="itch"] $workspace5
@@ -147,6 +147,10 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioStop exec playerctl stop
 bindsym XF86AudioNext exec playerctl next 
 bindsym XF86AudioPrev exec playerctl previous 
+
+# change audio profile
+bindsym $mod+a exec --no-startup-id pactl set-card-profile 0 'output:analog-stereo'
+bindsym $mod+Shift+a exec --no-startup-id pactl set-card-profile 0 'output:hdmi-stereo'
 
 # backlight controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
