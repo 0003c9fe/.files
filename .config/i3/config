@@ -104,7 +104,6 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # workspace assigning
 assign [class="(?i)firefox"] $workspace1
-assign [class="(?i)zoom"] $workspace2
 assign [class="discord"] $workspace2
 assign [class="(?i)steam"] $workspace5
 assign [class="itch"] $workspace5
