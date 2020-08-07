@@ -21,6 +21,7 @@ alias grep='rg'
 alias find='fd'
 
 alias sysmaintenance='yay -Syu && yay -Rns $(yay -Qtdq)'
+alias listaur='pacman -Qqm'
 
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
