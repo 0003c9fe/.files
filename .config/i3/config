@@ -12,12 +12,12 @@ gaps outer 0
 # borders
 default_border pixel 2
 new_float pixel 2
-client.focused #f1efee #f8f8f2 #f8f8f2 #f8f8f2
+client.focused #a8a19f #f1efee #a8a19f #a8a19f
+client.focused_inactive #a8a19f #a8a19f #a8a19f #a8a19f
 client.unfocused #a8a19f #a8a19f #a8a19f #a8a19f
-client.focused_inactive #a8a19f #f8f8f2 #f8f8f2 #f8f8f2
 client.urgent #a8a19f #a8a19f #a8a19f #a8a19f
-client.placeholder #a8a19f #f8f8f2 #f8f8f2 #f8f8f2
-client.background #a8a19f #f8f8f2 #f8f8f2 #f8f8f2
+client.placeholder #a8a19f #a8a19f #a8a19f #a8a19f
+client.background #a8a19f #a8a19f #a8a19f #a8a19f
 
 # maximum floating window size
 floating_maximum_size 1200 x 700
