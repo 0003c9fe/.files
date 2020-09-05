@@ -157,11 +157,11 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 # emoji picker
 bindsym $mod+u exec unicode-menu
 
-# constants menu
-bindsym $mod+c exec constants-menu
-
-# zoom menu
-bindsym $mod+z exec zoom-menu
+# task manager
+for_window [instance="taskmanager"] floating enable
+for_window [instance="taskmanager"] resize set 1200 700
+for_window [instance="taskmanager"] move position center
+bindsym Control+Mod1+Delete exec --no-startup-id st -f RobotoMono-12 -n taskmanager -e htop;
 
 # --DROPDOWN TERMINAL--
 bindsym $mod+Delete [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
