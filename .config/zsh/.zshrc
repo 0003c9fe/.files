@@ -16,7 +16,9 @@ bindkey -v
 PS1='%B%F{red}%m%f%F{cyan} %1~ $%f%b '
 
 #Aliases
-alias ls='exa --icons'
+alias ls='exa --icons -T -L=1'
+alias ls2='exa --icons -T -L=2'
+alias ls3='exa --icons -T -L=3'
 alias grep='rg'
 alias find='fd'
 
