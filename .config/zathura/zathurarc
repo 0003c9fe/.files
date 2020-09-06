@@ -6,6 +6,5 @@ set page-padding 1
 set default-bg "#1b1918"
 set guioptions ''
 
-set recolor
 set recolor-darkcolor "$a8a19f"
 set recolor-lightcolor "#1b1918"
