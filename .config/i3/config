@@ -163,6 +163,9 @@ for_window [instance="taskmanager"] resize set 1200 700
 for_window [instance="taskmanager"] move position center
 bindsym Control+Mod1+Delete exec --no-startup-id st -f RobotoMono-12 -n taskmanager -e htop;
 
+# password manager
+bindsym $mod+z exec bwmenu
+
 # --DROPDOWN TERMINAL--
 bindsym $mod+Delete [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 for_window [instance="dropdown"] floating enable
