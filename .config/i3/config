@@ -117,7 +117,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # applications 
 bindsym $mod+d exec rofi -show drun # application menu
-bindsym $mod+w exec st -e ranger # file manager
+bindsym $mod+w exec alacritty -e ranger # file manager
 
 # lock screen / shutdown / reboot
 bindsym $mod+BackSpace exec system-menu
@@ -161,7 +161,7 @@ bindsym $mod+u exec unicode-menu
 for_window [instance="taskmanager"] floating enable
 for_window [instance="taskmanager"] resize set 1200 700
 for_window [instance="taskmanager"] move position center
-bindsym Control+Mod1+Delete exec --no-startup-id st -f RobotoMono-12 -n taskmanager -e htop;
+bindsym Control+Mod1+Delete exec --no-startup-id alacritty --class taskmanager -e htop;
 
 # password manager
 bindsym $mod+z exec bwmenu
@@ -171,8 +171,8 @@ bindsym $mod+Delete [instance="dropdown"] scratchpad show; [instance="dropdown"]
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] resize set 1200 700
-exec --no-startup-id st -f RobotoMono-12 -n dropdown
-bindsym $mod+Shift+Delete exec --no-startup-id st -f RobotoMono-12 -n dropdown
+exec --no-startup-id alacritty --class dropdown
+bindsym $mod+Shift+Delete exec --no-startup-id alacritty --class dropdown --config-file $HOME/.config/alacritty/dropdown.yml
 
 # --PICTURE IN PICTURE--
 for_window [title="(?i)picture-in-picture"] sticky enable
