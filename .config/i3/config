@@ -48,6 +48,9 @@ bindsym $mod+Shift+q kill
 # toggle split direction
 bindsym $mod+t split toggle
 
+# toggle screen that current workspace is on
+bindsym $mod+x move workspace to output right
+
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
@@ -171,7 +174,7 @@ bindsym $mod+Delete [instance="dropdown"] scratchpad show; [instance="dropdown"]
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] resize set 1200 700
-exec --no-startup-id alacritty --class dropdown
+exec --no-startup-id alacritty --class dropdown --config-file $HOME/.config/alacritty/dropdown.yml
 bindsym $mod+Shift+Delete exec --no-startup-id alacritty --class dropdown --config-file $HOME/.config/alacritty/dropdown.yml
 
 # --PICTURE IN PICTURE--
