@@ -67,7 +67,7 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 nnoremap <Leader>lw :VimtexCountWords<CR>
 " Fugitive settings
 nnoremap <silent> <Leader>ga :G add %:r\.*<CR>
-nnoremap <silent> <Leader>gc :G commit -m ""<Left>
+nnoremap <Leader>gc :G commit -m ""<Left>
 nnoremap <silent> <Leader>gp :G push<CR>
 nnoremap <silent> <Leader>gs :G status<CR>
 
