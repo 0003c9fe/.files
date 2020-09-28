@@ -163,9 +163,16 @@ snippet => "implies" iA
 \implies
 endsnippet
 
+priority 10
 context "math()"
 snippet lr "left(right)" iA
 \left($1\right)$0
+endsnippet
+
+priority 100
+context "math()"
+snippet blr "left[right]" iA
+\left[$1\right]$0
 endsnippet
 
 priority 10
