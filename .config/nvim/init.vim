@@ -20,35 +20,30 @@ set nocompatible
 " CoC settings
 " Cycle completion options
 inoremap <silent><expr> <TAB>
-                        \ pumvisible() ? "\<C-n>" :
-                        \ <SID>check_back_space() ? "\<TAB>" :
-                        \ coc#refresh()
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
         let col = col('.') - 1
         return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
 " Open completion menu
 inoremap <silent><expr> <c-space> coc#refresh()
-
 " Accept completion option
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Documentation
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-        if (index(['vim','help'], &filetype) >= 0)
-                execute 'h '.expand('<cword>')
-        else
-                call CocAction('doHover')
-        endif
-endfunction
-
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Fugitive settings
+nnoremap <silent> <Leader>ga :G add %:r\.*<CR>
+nnoremap <Leader>gc :G commit -m ""<Left>
+nnoremap <silent> <Leader>gp :G push<CR>
+nnoremap <silent> <Leader>gs :G status<CR>
+
+" Sneak settings
+let g:sneak#s_next = 1
 
 " Vimtex / UltiSnips settings
 let g:tex_flavor='latex'
@@ -60,32 +55,27 @@ let g:tex_conceal='abdmg'
 let g:UltiSnipsExpandTrigger='�'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+" Clear extra files
 autocmd VimLeave *.tex !tex-clear %
+" Spell checker/corrector
 autocmd FileType tex setlocal spell
 set spelllang=en_gb
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+" Word count
 nnoremap <Leader>lw :VimtexCountWords<CR>
-" Fugitive settings
-nnoremap <silent> <Leader>ga :G add %:r\.*<CR>
-nnoremap <Leader>gc :G commit -m ""<Left>
-nnoremap <silent> <Leader>gp :G push<CR>
-nnoremap <silent> <Leader>gs :G status<CR>
-
-set gdefault
-let g:sneak#s_next = 1
 
 " Colours
+" Brackets
+highlight MatchParen cterm=bold ctermbg=none ctermfg=red
+" CoC menu
+highlight Pmenu ctermbg=darkgrey ctermfg=black
+highlight PmenuSel ctermbg=green ctermfg=black
 " Gitgutter
 highlight GitGutterAdd ctermfg=green
 highlight GitGutterChange ctermfg=yellow
 highlight GitGutterDelete ctermfg=red
-" CoC menu
-highlight Pmenu ctermbg=darkgrey ctermfg=black
-highlight PmenuSel ctermbg=green ctermfg=black
 " Vimtex Conceal
 highlight Conceal ctermbg=none ctermfg=red
-" Brackets
-highlight MatchParen cterm=bold ctermbg=none ctermfg=red
 
 " Always show signcolumns
 set signcolumn=yes
@@ -137,6 +127,9 @@ set sidescrolloff=6
 
 " Popup menu for commands
 set wildmenu
+
+" Switch behaviour of g on s
+set gdefault
 
 " Enable filetype features
 filetype indent plugin on
