@@ -1,5 +1,3 @@
-set nocompatible
-
 " Plugins
 call plug#begin('~/.nvim/plugged')
 Plug 'lervag/vimtex'
@@ -112,6 +110,7 @@ set cmdheight=2
 set updatetime=300
 
 " Don't give |ins-completion-menu| messages
+set shortmess=F
 set shortmess+=c
 
 " Highlight matching brackets
@@ -143,10 +142,20 @@ syntax on
 " Clipboard 
 set clipboard=unnamedplus
 
-set shortmess=F
+" No auto-comment on newline
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" Sensible split directions
+set splitbelow splitright
+
+" I forgot to edit with sudo
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+" Automatically remove trailing whitespace and newlines.
+autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritepre * %s/\n\+\%$//e
+
+" Misc
 set encoding=utf-8
-
 set t_Co=256
-
 set laststatus=2
