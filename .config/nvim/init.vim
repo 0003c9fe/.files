@@ -66,13 +66,16 @@ let g:lightline = {
       \ 'colorscheme': 'selenized_black',
       \ 'active': {
       \   'left':  [ [ 'mode' ],
-      \              [ 'gitbranch' ],
+      \              [ 'gitinfo' ],
       \              [ 'readonly', 'filename' ] ],
-      \   'right': [ [ 'percent' ] ]
+      \   'right': [ [ 'positioninfo' ],
+      \              [ 'vimtexcount' ] ]
       \ },
       \ 'component_function': {
-      \ 'gitbranch': 'LightlineGit',
-      \ 'filename': 'LightlineFilename'
+      \ 'gitinfo': 'LightlineGit',
+      \ 'filename': 'LightlineFilename',
+      \ 'vimtexcount': 'LightlineTexWordcount',
+      \ 'positioninfo': 'LightlinePosition'
       \ },
       \ 'mode_map': {
       \ 'n' : 'NOR',
@@ -95,6 +98,13 @@ function! LightlineFilename()
         let modified = &modified ? ' [+]' : ''
         return filename . modified
 endfunction
+function! LightlineTexWordcount()
+        let words = 8 "vimtex#misc#wordcount()
+        return words . 'W'
+endfunction
+function! LightlinePosition()
+        return (100 * line('.') / line('$')) . '%  ' . line('.') . '/' . line('$')
+endfunction
 
 " Theming
 " Colourschemes
@@ -106,6 +116,11 @@ autocmd ColorScheme * highlight Pmenu guibg=DarkGrey guifg=black
 autocmd ColorScheme * highlight PmenuSel guibg='#70b433' guifg=black
 " Vimtex conceal
 autocmd ColorScheme * highlight Conceal guibg=none guifg=lightred
+
+" Jump between todo comments
+" TODO fix these to jump back properly, and not display messages and highlighting for failed jumps
+nmap <silent> ]t :set nowrapscan<CR> /TODO<CR> :nohlsearch<CR> :set wrapscan<CR>
+nmap <silent> [t :set nowrapscan<CR> ?TODO<CR> :nohlsearch<CR> :set wrapscan<CR>
 
 " Always show signcolumns
 set signcolumn=yes
