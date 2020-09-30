@@ -67,11 +67,12 @@ let g:lightline = {
       \ 'active': {
       \   'left':  [ [ 'mode' ],
       \              [ 'gitbranch' ],
-      \              [ 'readonly', 'filename', 'modified' ] ],
+      \              [ 'readonly', 'filename' ] ],
       \   'right': [ [ 'percent' ] ]
       \ },
       \ 'component_function': {
-      \ 'gitbranch': 'FugitiveHead'
+      \ 'gitbranch': 'LightlineGit',
+      \ 'filename': 'LightlineFilename'
       \ },
       \ 'mode_map': {
       \ 'n' : 'NOR',
@@ -83,6 +84,17 @@ let g:lightline = {
       \ 'c' : 'COM',
       \ },
       \ }
+" TODO unpushed changes indicator
+function! LightlineGit()
+        let branch = FugitiveHead()
+        let [a,m,r] = GitGutterGetHunkSummary()
+        return '+' . a . ' ~' . m . ' -' . r . '  ' . branch
+endfunction
+function! LightlineFilename()
+        let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+        let modified = &modified ? ' [+]' : ''
+        return filename . modified
+endfunction
 
 " Theming
 " Colourschemes
@@ -92,7 +104,6 @@ colorscheme selenized_bw
 " CoC menu
 autocmd ColorScheme * highlight Pmenu guibg=DarkGrey guifg=black
 autocmd ColorScheme * highlight PmenuSel guibg='#70b433' guifg=black
-
 " Vimtex conceal
 autocmd ColorScheme * highlight Conceal guibg=none guifg=lightred
 
